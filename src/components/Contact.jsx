@@ -22,9 +22,9 @@ export default function Contact() {
             Tell us about your app idea and we'll get back to you within one business day.
           </p>
           <div className="contact__info">
-            <a href="mailto:hello@novaric.io" className="contact__info-item">
+            <a href="mailto:treasure0613@gmail.com" className="contact__info-item">
               <span className="contact__info-icon">✉</span>
-              hello@novaric.io
+              treasure0613@gmail.com
             </a>
             <div className="contact__info-item">
               <span className="contact__info-icon">📍</span>

@@ -24,7 +24,7 @@ export default function Navbar() {
     <header className={`nav ${scrolled ? 'nav--scrolled' : ''}`}>
       <div className="container nav__inner">
         <a href="#home" className="nav__logo" onClick={close}>
-          <span className="nav__logo-mark">◆</span>
+          <img src="/novaric/logo.svg" alt="Novaric logo" className="nav__logo-img" />
           Novaric
         </a>
 

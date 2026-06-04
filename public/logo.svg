@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <!-- North arm: cyan -->
+    <linearGradient id="nGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#29d4e8"/>
+      <stop offset="100%" stop-color="#00e5ff"/>
+    </linearGradient>
+    <!-- South arm: warm orange -->
+    <linearGradient id="sGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffe082"/>
+      <stop offset="60%" stop-color="#ffa726"/>
+      <stop offset="100%" stop-color="#e65100"/>
+    </linearGradient>
+    <!-- EW arms -->
+    <linearGradient id="ewGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#4dd0e1" stop-opacity="0.45"/>
+      <stop offset="50%"  stop-color="#b2ebf2" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#4dd0e1" stop-opacity="0.45"/>
+    </linearGradient>
+    <!-- Diagonal arms -->
+    <linearGradient id="diagGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#90e0ef" stop-opacity="0.55"/>
+      <stop offset="50%"  stop-color="#caf0f8" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#90e0ef" stop-opacity="0.45"/>
+    </linearGradient>
+    <!-- Center radial glow -->
+    <radialGradient id="cGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#ffffff" stop-opacity="1"/>
+      <stop offset="25%"  stop-color="#e0f7fa" stop-opacity="0.9"/>
+      <stop offset="60%"  stop-color="#4dd0e1" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#0d47a1" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Ambient halo -->
+    <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#b2ebf2" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#4dd0e1" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="strongGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Outer dashed orbit circle -->
+  <circle cx="100" cy="100" r="87" fill="none"
+    stroke="rgba(176,230,240,0.22)" stroke-width="1"
+    stroke-dasharray="3,7"/>
+  <!-- Tiny orbit dots -->
+  <circle cx="100" cy="13"  r="2" fill="rgba(176,230,240,0.35)"/>
+  <circle cx="100" cy="187" r="2" fill="rgba(176,230,240,0.25)"/>
+  <circle cx="13"  cy="100" r="2" fill="rgba(176,230,240,0.35)"/>
+  <circle cx="187" cy="100" r="2" fill="rgba(176,230,240,0.25)"/>
+
+  <!-- ── Diagonal arms (NW NE SW SE) ─────────────────── -->
+  <!-- NW -->
+  <polygon points="100,94 38,38 94,100"  fill="url(#diagGrad)" opacity="0.65"/>
+  <!-- NE -->
+  <polygon points="106,94 162,38 106,100" fill="url(#diagGrad)" opacity="0.65"/>
+  <!-- SW -->
+  <polygon points="94,106 38,162 100,106" fill="url(#diagGrad)" opacity="0.5"/>
+  <!-- SE -->
+  <polygon points="106,106 162,162 100,106" fill="url(#diagGrad)" opacity="0.5"/>
+
+  <!-- ── East / West arms ─────────────────────────────── -->
+  <polygon points="100,94 16,100 100,106"  fill="url(#ewGrad)"/>
+  <polygon points="100,94 184,100 100,106" fill="url(#ewGrad)"/>
+
+  <!-- ── North arm (cyan, tallest) ────────────────────── -->
+  <polygon points="94,100 100,14 106,100" fill="url(#nGrad)" filter="url(#glow)"/>
+
+  <!-- ── South arm (orange, tall) ─────────────────────── -->
+  <polygon points="94,100 100,180 106,100" fill="url(#sGrad)" filter="url(#glow)"/>
+
+  <!-- ── Ambient halo ──────────────────────────────────── -->
+  <circle cx="100" cy="100" r="40" fill="url(#halo)" filter="url(#strongGlow)"/>
+
+  <!-- ── Center radial light ──────────────────────────── -->
+  <circle cx="100" cy="100" r="28" fill="url(#cGlow)"/>
+
+  <!-- ── Center orb ────────────────────────────────────── -->
+  <circle cx="100" cy="100" r="11" fill="white" filter="url(#strongGlow)" opacity="0.6"/>
+  <circle cx="100" cy="100" r="9"  fill="white" filter="url(#glow)"/>
+  <circle cx="100" cy="100" r="7"  fill="white"/>
+  <!-- Specular highlight -->
+  <circle cx="97"  cy="97"  r="3"  fill="white" opacity="0.75"/>
+</svg>
