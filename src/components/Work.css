@@ -1,0 +1,117 @@
+.work__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-6);
+}
+
+.work-card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  transition: transform .25s, box-shadow .25s;
+}
+.work-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(0,0,0,.5);
+}
+
+.work-card__preview {
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Mock screens ──────────────────────────────────────── */
+.mock-screen {
+  width: 130px;
+  background: rgba(0,0,0,.35);
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.1);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mock-title {
+  font-size: .65rem;
+  font-weight: 700;
+  color: rgba(255,255,255,.8);
+  text-align: center;
+}
+
+.mock-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 50px;
+}
+.mock-bar {
+  flex: 1;
+  height: var(--h);
+  border-radius: 3px;
+  background: var(--accent, #7c3aed);
+  opacity: .85;
+}
+
+.mock-balance {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #fff;
+  text-align: center;
+  padding: 4px 0;
+}
+
+.mock-row {
+  height: 8px;
+  border-radius: 4px;
+  background: rgba(255,255,255,.12);
+}
+.mock-row--sm { width: 70%; height: 6px; background: rgba(255,255,255,.07); }
+
+.mock-map {
+  position: relative;
+  height: 60px;
+  background: rgba(255,255,255,.06);
+  border-radius: 8px;
+}
+.map-pin {
+  position: absolute;
+  width: 10px; height: 10px;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  background: var(--accent, #3b82f6);
+  box-shadow: 0 0 8px var(--accent, #3b82f6);
+}
+
+/* ── Card body ──────────────────────────────────────────── */
+.work-card__body {
+  padding: var(--sp-6);
+}
+.work-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-4);
+}
+.work-card h3 {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  margin-bottom: var(--sp-2);
+}
+.work-card p {
+  font-size: var(--text-sm);
+  color: var(--clr-muted);
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .work__grid { grid-template-columns: 1fr; max-width: 480px; margin-inline: auto; }
+}
+@media (max-width: 560px) {
+  .work__grid { max-width: 100%; }
+}
