@@ -15,7 +15,9 @@ export default function About() {
       <div className="container about__grid">
 
         <div className="about__visual" aria-hidden>
-          <div className="about__logo-bg">N</div>
+          <div className="about__logo-bg">
+            <img src="/novaric/logo.svg" alt="Novaric" className="about__logo-img" />
+          </div>
           {CARDS.map(({ icon, label }) => (
             <div className="about__pill" key={label}>
               <span>{icon}</span>
