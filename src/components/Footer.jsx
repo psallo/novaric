@@ -39,7 +39,7 @@ export default function Footer() {
 
         <div className="footer__brand">
           <a href="#home" className="footer__logo">
-            <img src="/novaric/logo.svg" alt="Novaric logo" className="footer__logo-img" />
+            <img src="/logo.svg" alt="Novaric logo" className="footer__logo-img" />
             Novaric
           </a>
           <p>Crafting mobile experiences that matter.</p>
