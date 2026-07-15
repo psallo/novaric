@@ -11,12 +11,15 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  const onHome = typeof window === 'undefined' || window.location.pathname === '/';
+  const prefix = onHome ? '' : '/';
+
   const links = [
-    { href: '#about',    label: 'About'    },
-    { href: '#services', label: 'Services' },
-    { href: '#work',     label: 'Our Work' },
-    { href: '#blogs',    label: 'Blogs'    },
-    { href: '#contact',  label: 'Contact'  },
+    { href: `${prefix}#about`,    label: 'About'    },
+    { href: `${prefix}#services`, label: 'Services' },
+    { href: `${prefix}#work`,     label: 'Our Work' },
+    { href: `${prefix}#blogs`,    label: 'Blogs'    },
+    { href: `${prefix}#contact`,  label: 'Contact'  },
   ];
 
   const close = () => setOpen(false);
@@ -24,7 +27,7 @@ export default function Navbar() {
   return (
     <header className={`nav ${scrolled ? 'nav--scrolled' : ''}`}>
       <div className="container nav__inner">
-        <a href="#home" className="nav__logo" onClick={close}>
+        <a href={`${prefix}#home`} className="nav__logo" onClick={close}>
           <img src="/logo.svg" alt="Novaric logo" className="nav__logo-img" />
           Novaric
         </a>
@@ -33,7 +36,7 @@ export default function Navbar() {
           {links.map(({ href, label }) => (
             <a key={href} href={href} onClick={close}>{label}</a>
           ))}
-          <a href="#contact" className="btn btn--primary nav__cta" onClick={close}>
+          <a href={`${prefix}#contact`} className="btn btn--primary nav__cta" onClick={close}>
             Get a Quote
           </a>
         </nav>

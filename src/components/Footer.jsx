@@ -58,6 +58,10 @@ export default function Footer() {
             <a href="#services">iOS Apps</a>
             <a href="#services">Cross-Platform</a>
           </div>
+          <div className="footer__nav-group">
+            <div className="footer__nav-label">Legal</div>
+            <a href="/privacy">Privacy Policy</a>
+          </div>
         </nav>
 
         <div className="footer__social">
